@@ -30,7 +30,8 @@ if __name__ == "__main__":
     cmc = CoinMarketCapAPI(CMC_API_KEY)
     parser = argparse.ArgumentParser(description="CoinmarketCap API tool to get a crypto qutoe ASAP.")
     parser.add_argument("--symbol", '-s', help="Which crypto symbol to check.", type=str, required=True, dest='symbol')
-    parser.add_argument("--currency", '-c', help="Which fiat currency to convert to.", type=str, required=True, dest='currency')
+    parser.add_argument("--currency", '-c', help="Which fiat currency to convert to.", type=str, required=False, dest='currency')
+    parser.add_argument("--status", "-st", help="Status of airdrop. Can be:\nended\nongoing\nupcoming\n", type=str, required=False, dest='status')
 
     args = parser.parse_args()
 
